@@ -1,568 +1,791 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Le Grand Bleu : restaurant bistronomique, L'Île-Rousse</title>
-  <meta name="description" content="Le Grand Bleu à L'Île-Rousse : cuisine bistronomique franco-méditerranéenne sous un ficus de 35 ans. Tartare au couteau, pasta maison, poissons locaux."/>
-  <meta name="theme-color" content="#F7F1E6"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bg: '#F7F1E6',
-            ink: '#0E2A3B',
-            'ink-2': '#5A6A6F',
-            accent: '#C5633E',
-            'accent-dk': '#B0572F',
-            line: '#D9CDB6',
-          },
-          fontFamily: {
-            display: ['Fraunces', 'serif'],
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-  <style>
-    :root {
-      --bg: #F7F1E6;
-      --ink: #0E2A3B;
-      --ink-2: #5A6A6F;
-      --accent: #C5633E;
-      --accent-dk: #B0572F;
-      --line: #D9CDB6;
-    }
-    html, body { background: var(--bg); color: var(--ink); }
-    body { font-family: 'DM Sans', system-ui, sans-serif; font-size: 1.05rem; line-height: 1.65; }
-    .font-display { font-family: 'Fraunces', serif; }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Le Grand Bleu, une cuisine ecrite sous un ficus de trente-cinq ans / L'Ile-Rousse</title>
+<meta name="description" content="Bernard et Sebastien, duo pere-fils, signent une table de Balagne Place du Canon. Tartare decoupe au couteau, pasta maison, poissons du jour. Travelers' Choice 2025." />
+<meta name="theme-color" content="#F4EEE2" />
 
-    .h1 {
-      font-family: 'Fraunces', serif; font-weight: 700;
-      font-size: clamp(2.6rem, 7.5vw, 5.2rem); line-height: 0.98;
-      letter-spacing: -0.02em; font-variation-settings: "opsz" 144;
-    }
-    .h2 {
-      font-family: 'Fraunces', serif; font-weight: 500;
-      font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.08;
-      letter-spacing: -0.01em; font-variation-settings: "opsz" 72;
-    }
-    .h3 {
-      font-family: 'Fraunces', serif; font-weight: 500;
-      font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.2;
-      font-variation-settings: "opsz" 24;
-    }
-    .lede {
-      font-family: 'Fraunces', serif; font-weight: 300; font-style: italic;
-      font-size: clamp(1.1rem, 1.6vw, 1.25rem); line-height: 1.55;
-      color: var(--ink-2);
-    }
-    .eyebrow {
-      font-family: 'DM Sans', sans-serif; font-weight: 500;
-      font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--accent);
-    }
-    .rule-top::before {
-      content: ""; display: block; width: 48px; height: 2px;
-      background: var(--accent); margin-bottom: 18px;
-    }
-    .divider {
-      height: 1px; background: var(--line); width: 100%;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&family=Inter:wght@400;500&display=swap" />
 
-    /* Nav */
-    .nav-shell {
-      background: rgba(247, 241, 230, 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: box-shadow 180ms ease;
-    }
-    .nav-shell.scrolled { box-shadow: 0 1px 0 rgba(14,42,59,0.08); }
-    .nav-link { position: relative; padding: 6px 0; }
-    .nav-link::after {
-      content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
-      background: var(--accent); transform: scaleX(0); transform-origin: left;
-      transition: transform 220ms cubic-bezier(0.2,0.7,0.2,1);
-    }
-    .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg:    '#F4EEE2',
+          ink:   '#1A1814',
+          ink2:  '#5A5247',
+          accent:'#B64A2E',
+          line:  '#3F5236',
+          paper: '#FBF8F0',
+        },
+        fontFamily: {
+          display: ['Fraunces','ui-serif','Georgia','serif'],
+          body:    ['Inter','ui-sans-serif','system-ui','sans-serif'],
+        },
+      },
+    },
+  };
+</script>
 
-    /* CTA */
-    .cta-primary {
-      background: var(--accent); color: #F7F1E6;
-      padding: 0.95rem 1.4rem; border-radius: 999px;
-      font-weight: 500; letter-spacing: 0.01em;
-      transition: background 160ms ease, transform 160ms ease;
-      display: inline-flex; align-items: center; gap: 0.6rem;
-    }
-    .cta-primary:hover { background: var(--accent-dk); transform: translateY(-1px); }
-    .cta-ghost {
-      border: 1px solid var(--accent); color: var(--accent);
-      padding: 0.85rem 1.3rem; border-radius: 999px;
-      font-weight: 500;
-      transition: background 160ms ease, color 160ms ease;
-    }
-    .cta-ghost:hover { background: var(--accent); color: #F7F1E6; }
-    .cta-underline {
-      color: var(--ink); font-weight: 500;
-      border-bottom: 1px solid var(--ink);
-      padding-bottom: 2px;
-      transition: color 160ms ease, border-color 160ms ease;
-    }
-    .cta-underline:hover { color: var(--accent); border-color: var(--accent); }
+<style>
+  :root{
+    --bg:#F4EEE2;
+    --ink:#1A1814;
+    --ink-2:#5A5247;
+    --accent:#B64A2E;
+    --line:#3F5236;
+    --paper:#FBF8F0;
+  }
+  html,body{background:var(--bg);color:var(--ink);}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:400;
+    font-size:1rem;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-feature-settings:"kern","liga","ss01";
+  }
+  .font-display{font-family:'Fraunces',Georgia,serif;font-variation-settings:"opsz" 144, "SOFT" 50;}
 
-    /* Marquee */
-    .marquee-track { display: flex; gap: 2.5rem; white-space: nowrap; width: max-content; animation: marquee-scroll 40s linear infinite; }
-    #marquee:hover .marquee-track { animation-play-state: paused; }
-    @keyframes marquee-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .marquee-item { display: inline-flex; align-items: center; gap: 2.5rem; font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.4rem, 3vw, 2rem); color: #F7F1E6; }
-    .marquee-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--accent); display: inline-block; }
+  /* Cover typography */
+  .cover-title{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:900;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:clamp(3rem, 11vw, 8.4rem);
+    line-height:.92;
+    letter-spacing:-0.035em;
+    color:var(--ink);
+  }
+  .section-title{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:700;
+    font-variation-settings:"opsz" 96, "SOFT" 50;
+    font-size:clamp(2rem, 5vw, 3.4rem);
+    line-height:1.02;
+    letter-spacing:-0.02em;
+  }
+  .section-title .roman{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    font-style:italic;
+    color:var(--accent);
+    font-size:.52em;
+    letter-spacing:.06em;
+    margin-right:.4em;
+    vertical-align:.18em;
+  }
+  .eyebrow{
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:500;
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--line);
+  }
+  .lede{
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:500;
+    font-size:1.18rem;
+    line-height:1.55;
+    color:var(--ink);
+  }
+  .caption{
+    font-family:'Inter',system-ui,sans-serif;
+    font-weight:400;
+    font-style:italic;
+    font-size:.82rem;
+    color:var(--ink-2);
+  }
+  .pull-italic{
+    font-family:'Fraunces',Georgia,serif;
+    font-style:italic;
+    font-weight:400;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+  }
+  .accent-link{
+    color:var(--accent);
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+    transition:text-decoration-thickness .2s ease, color .2s ease;
+  }
+  .accent-link:hover{ text-decoration-thickness:2px; color:#8F3720; }
 
-    /* Cards signature */
-    .sig-card {
-      background: #FBF7EE;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 1.25rem;
-      transition: transform 220ms cubic-bezier(0.2,0.7,0.2,1), box-shadow 220ms cubic-bezier(0.2,0.7,0.2,1);
-    }
-    @media (hover: hover) {
-      .sig-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(14,42,59,0.08); }
-    }
-    @media (hover: none) {
-      .sig-card { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(14,42,59,0.05); }
-    }
-    .sig-card .rule { width: 24px; height: 2px; background: var(--accent); margin-bottom: 12px; }
+  /* Hairline rules */
+  .rule-ficus{
+    height:1px;background:var(--line);width:100%;transform-origin:left;transform:scaleX(0);
+  }
+  .rule-ficus.is-in{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.2,.7,.2,1);}
+  .rule-accent{ height:1px;background:var(--accent); }
+  .rule-thin-ink{ height:1px;background:rgba(26,24,20,.18); }
 
-    /* Reveal */
-    [data-reveal] { opacity: 0; transform: translateY(20px); }
+  /* Drop-cap */
+  .dropcap::first-letter{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:900;
+    font-variation-settings:"opsz" 144;
+    color:var(--accent);
+    float:left;
+    font-size:5.4rem;
+    line-height:.85;
+    padding:.45rem .55rem 0 0;
+    margin-top:.15rem;
+  }
+  @media (min-width:768px){
+    .dropcap::first-letter{ font-size:6.6rem; padding:.5rem .7rem 0 0; }
+  }
 
-    /* Chip */
-    .chip {
-      background: rgba(247,241,230,0.94); color: var(--ink);
-      border: 1px solid var(--line); border-radius: 999px;
-      padding: 0.4rem 0.8rem; font-size: 0.78rem; font-weight: 500;
-      letter-spacing: 0.04em;
-    }
+  /* Double-column article */
+  .two-col{
+    column-count:1;
+    column-gap:2.2rem;
+    column-rule:1px solid rgba(63,82,54,.35);
+    font-size:1.02rem;
+    line-height:1.66;
+  }
+  @media (min-width:860px){
+    .two-col{ column-count:2; }
+  }
+  .two-col > p{ break-inside:avoid; margin:0 0 1.05em; }
+  .two-col > p:first-child{ text-indent:0; }
+  .two-col > p + p{ text-indent:1.2em; }
+  .col-dropcap::first-letter{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:900;
+    color:var(--accent);
+    float:left;
+    font-size:4.4rem;
+    line-height:.85;
+    padding:.35rem .5rem 0 0;
+  }
 
-    /* Hero image ratio */
-    .hero-ratio { aspect-ratio: 4 / 5; }
-    @media (min-width: 1024px) { .hero-ratio { aspect-ratio: 3 / 4; } }
+  /* Marginalia numbering (desktop only) */
+  .marginalia{
+    position:absolute;
+    left:-3.6rem;
+    top:.4rem;
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    font-style:italic;
+    font-variant:small-caps;
+    font-size:.95rem;
+    letter-spacing:.08em;
+    color:var(--accent);
+    display:none;
+  }
+  @media (min-width:1100px){ .marginalia{ display:block; } }
 
-    /* Gallery items */
-    .g-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Ancre-citation pull-quote overlay */
+  .ancre-citation{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    pointer-events:none;
+    z-index:40;
+    opacity:0;
+  }
+  .ancre-citation .card{
+    position:relative;
+    width:min(60vw, 720px);
+    margin-right:clamp(1rem, 4vw, 4rem);
+    background:rgba(244,238,226,.94);
+    backdrop-filter:blur(6px);
+    border-top:1px solid var(--accent);
+    border-bottom:1px solid var(--accent);
+    padding:clamp(1.5rem,3.6vw,2.6rem) clamp(1.4rem,3vw,2.4rem);
+    transform:translateX(40%);
+    box-shadow:0 20px 60px rgba(26,24,20,.12);
+  }
+  @media (max-width:760px){
+    .ancre-citation .card{ width:min(86vw, 520px); margin-right:clamp(.6rem,3vw,1.2rem); }
+  }
+  .ancre-citation .card q{ quotes:none; }
+  .ancre-citation .card q::before,.ancre-citation .card q::after{ content:""; }
+  .ancre-citation .quote{
+    font-family:'Fraunces',Georgia,serif;
+    font-style:italic;
+    font-weight:900;
+    font-variation-settings:"opsz" 144, "SOFT" 100;
+    font-size:clamp(1.6rem, 4.6vw, 3.2rem);
+    line-height:1.1;
+    letter-spacing:-0.015em;
+    color:var(--ink);
+  }
+  .ancre-citation .attrib{
+    margin-top:1rem;
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--line);
+  }
+  .dim-when-overlay{ transition:filter .5s ease; }
+  body.overlay-active .dim-when-overlay{ filter:brightness(.97); }
 
-    /* Horaires table */
-    .hrs { width: 100%; border-collapse: collapse; }
-    .hrs td { padding: 0.65rem 0; border-bottom: 1px dashed var(--line); font-family: 'DM Sans', sans-serif; }
-    .hrs td:first-child { color: var(--ink-2); }
-    .hrs td:last-child { text-align: right; font-weight: 500; }
-    .hrs tr:last-child td { border-bottom: 0; }
+  /* Gallery */
+  .plate{
+    position:relative;
+    border:1px solid var(--line);
+    overflow:hidden;
+    background:var(--paper);
+  }
+  .plate img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .24s ease;
+  }
+  .plate:hover img{ transform:scale(1.02); }
+  .plate-num{
+    position:absolute;top:.6rem;left:.7rem;
+    font-family:'Fraunces',Georgia,serif;font-weight:700;
+    color:var(--accent);font-size:1.05rem;letter-spacing:.04em;
+    background:rgba(244,238,226,.85);padding:.2rem .45rem;
+  }
+  .plate-label{
+    position:absolute;bottom:0;left:0;right:0;
+    background:rgba(244,238,226,.92);
+    font-family:'Inter',sans-serif;
+    font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink);padding:.5rem .75rem;
+    border-top:1px solid var(--line);
+  }
 
-    /* Footer brand */
-    .brand-xxl {
-      font-family: 'Fraunces', serif; font-weight: 700;
-      font-size: clamp(4rem, 15vw, 11rem); line-height: 0.88;
-      letter-spacing: -0.03em; color: var(--bg);
-      font-variation-settings: "opsz" 144;
-    }
+  ::selection{ background:#B64A2E; color:#F4EEE2; }
 
-    /* Focus ring */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px;
-    }
+  .frame-ficus{ border:2px solid var(--line); background:var(--paper); }
 
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .marquee-track { animation: none; }
-      [data-reveal] { opacity: 1; transform: none; }
-      * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
-    }
-  </style>
+  /* Fact sheet */
+  .fact-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:.6rem;
+    align-items:baseline;
+    padding:.65rem 0;
+    border-bottom:1px solid rgba(63,82,54,.28);
+  }
+  .fact-row:last-child{ border-bottom:0; }
+  .fact-key{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:1rem;
+    color:var(--ink);
+  }
+  .fact-val{
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    font-size:.95rem;
+    color:var(--ink-2);
+    text-align:right;
+  }
+
+  /* Reveal */
+  [data-reveal]{ opacity:0; transform:translateY(18px); }
+  [data-reveal].is-in{ opacity:1; transform:none; transition:opacity .75s cubic-bezier(.2,.7,.2,1), transform .75s cubic-bezier(.2,.7,.2,1); }
+
+  .sc{ font-variant:small-caps; letter-spacing:.12em; }
+
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+  .ours{
+    font-family:'Inter',sans-serif;
+    font-size:.74rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+
+  .phone-xl{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:700;
+    color:var(--accent);
+    font-size:clamp(2.2rem, 6vw, 3.6rem);
+    letter-spacing:-0.015em;
+    line-height:1;
+  }
+
+  .max-measure{ max-width:62ch; }
+  .max-measure-wide{ max-width:76ch; }
+
+  /* Cover column-ruled meta */
+  .meta-col{
+    border-left:1px solid rgba(63,82,54,.55);
+    padding-left:.9rem;
+  }
+  .meta-col:first-child{ border-left:0; padding-left:0; }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{ animation:none !important; transition:none !important; }
+    [data-reveal]{ opacity:1 !important; transform:none !important; }
+    .rule-ficus{ transform:scaleX(1) !important; }
+  }
+</style>
 </head>
-<body class="antialiased">
+<body class="bg-bg text-ink antialiased">
 
-  <!-- NAV -->
-  <nav id="nav" class="nav-shell fixed top-0 inset-x-0 z-50">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex items-center justify-between">
-      <a href="#hero" class="font-display text-xl sm:text-2xl font-medium tracking-tight text-ink">Le Grand Bleu</a>
-      <div class="hidden md:flex items-center gap-8 text-sm text-ink">
-        <a class="nav-link" href="#histoire">Maison</a>
-        <a class="nav-link" href="#signature">Carte</a>
-        <a class="nav-link" href="#galerie">Galerie</a>
-        <a class="nav-link" href="#proof">Avis</a>
-        <a class="nav-link" href="#infos">Nous trouver</a>
+<a href="#infos" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:bg-ink focus:text-bg focus:px-3 focus:py-2 focus:z-50">Aller aux informations pratiques</a>
+
+<!-- ================== COVER ================== -->
+<section id="cover" class="dim-when-overlay relative">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+
+    <div class="pt-6 sm:pt-8">
+      <div class="rule-ficus" data-rule></div>
+      <div class="flex items-center justify-between mt-3 sm:mt-4 ours">
+        <span>Menghi, numero 01</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>Printemps, 2026</span>
       </div>
-      <a href="#infos" class="cta-ghost text-sm hidden sm:inline-flex">Réserver</a>
-      <a href="tel:+33495600037" class="cta-primary text-sm sm:hidden" aria-label="Appeler Le Grand Bleu">
-        <span>Appeler</span>
-      </a>
+      <div class="rule-thin-ink mt-3 sm:mt-4"></div>
     </div>
-  </nav>
 
-  <main>
+    <p class="eyebrow text-center mt-12 sm:mt-16" data-reveal>
+      Numero 01, Balagne, Place du Canon
+    </p>
 
-    <!-- HERO -->
-    <section id="hero" class="pt-28 sm:pt-32 pb-16 sm:pb-24">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14 items-center">
+    <h1 class="cover-title text-center mt-6 sm:mt-8 px-1" data-reveal>
+      Le Grand Bleu,<br/>
+      <span class="pull-italic" style="font-weight:900;">une cuisine ecrite</span><br/>
+      sous un ficus de trente-cinq ans
+    </h1>
+
+    <p class="lede text-center mt-8 sm:mt-10 mx-auto max-w-[58ch]" data-reveal>
+      Bernard et Sebastien, duo pere-fils, signent une table de Balagne&nbsp;: tartare decoupe au couteau en salle, pasta maison, poissons du jour. Travelers' Choice 2025, 4.4 sur 5 apres 1&nbsp;181 avis.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-9 sm:mt-10" data-reveal>
+      <a class="accent-link font-display text-[1.05rem]" style="font-weight:500;" href="tel:+33495600037">Reserver au 04 95 60 00 37</a>
+      <span class="ours" aria-hidden="true">&middot;</span>
+      <a class="accent-link font-display text-[1.05rem]" style="font-weight:500;" href="#article">Lire la carte</a>
+    </div>
+
+    <div class="mt-16 sm:mt-24 mb-10">
+      <div class="rule-ficus" data-rule></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-2 mt-6">
+        <div class="meta-col">
+          <div class="eyebrow mb-1">Volume</div>
+          <div class="font-display text-[1.15rem]" style="font-weight:500;">I</div>
+        </div>
+        <div class="meta-col">
+          <div class="eyebrow mb-1">Numero</div>
+          <div class="font-display text-[1.15rem]" style="font-weight:500;">01</div>
+        </div>
+        <div class="meta-col">
+          <div class="eyebrow mb-1">Saison</div>
+          <div class="font-display text-[1.15rem]" style="font-weight:500;">Avril, octobre</div>
+        </div>
+        <div class="meta-col">
+          <div class="eyebrow mb-1">Date</div>
+          <div class="font-display text-[1.15rem]" style="font-weight:500;">19 avril 2026</div>
+        </div>
+      </div>
+      <div class="rule-thin-ink mt-6"></div>
+      <p class="ours mt-3 text-center sm:text-left">
+        L'Ile-Rousse, Haute-Corse &middot; Service midi et soir &middot; <a class="accent-link" href="tel:+33495600037">+33&nbsp;4&nbsp;95&nbsp;60&nbsp;00&nbsp;37</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================== CHAPO-EDITO ================== -->
+<section id="chapo" class="dim-when-overlay relative py-16 sm:py-24">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="rule-ficus" data-rule></div>
+    <div class="relative py-10 sm:py-14">
+      <span class="marginalia">I.</span>
+      <p class="eyebrow mb-6" data-reveal>Chapo, avril 2026</p>
+      <p class="pull-italic max-measure mx-auto text-[1.22rem] sm:text-[1.35rem] leading-[1.5] dropcap" data-reveal>
+        Place du Canon, l'ombre d'un ficus de trente-cinq ans dessine un salon a ciel ouvert. C'est la que Bernard et Sebastien cuisinent une Balagne de memoire et d'envie&nbsp;: tartare decoupe au couteau devant vous, raviolis ricotta-epinards finis a l'huile de menthe, pasta aux langoustines, poissons du port. Une maison qui lit ses saisons, une cuisine qui s'ecrit a voix basse, et l'accueil d'une table que les guides ont deja reconnue. Travelers' Choice 2025, 4.4 sur 5, 1&nbsp;181 avis.
+      </p>
+    </div>
+    <div class="rule-ficus" data-rule></div>
+  </div>
+</section>
+
+<!-- ================== OUVERTURE-IMAGE ================== -->
+<section id="ouverture" class="dim-when-overlay relative pb-16 sm:pb-24">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="relative" data-reveal>
+      <span class="marginalia">II.</span>
+      <figure class="frame-ficus relative">
+        <div class="w-full overflow-hidden" style="aspect-ratio: 16/10;">
+          <img
+            id="ouverture-image"
+            src="./assets/images/hero-grand-bleu-terrasse.jpg"
+            alt="Le Grand Bleu, terrasse sous le ficus, Place du Canon, L'Ile-Rousse"
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <figcaption class="absolute right-3 bottom-3 sm:right-5 sm:bottom-5 bg-bg/90 px-3 py-1.5 caption border border-[color:var(--line)]">
+          La terrasse, Place du Canon, printemps 2025
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================== ARTICLE SIGNATURE (double column) ================== -->
+<section id="article" class="dim-when-overlay relative pb-20 sm:pb-28">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="relative">
+      <span class="marginalia">III.</span>
+      <p class="eyebrow mb-4" data-reveal>Chapitre premier</p>
+      <h2 class="section-title" data-reveal>
+        <span class="roman">III.</span>La cuisine, ecrite au couteau
+      </h2>
+      <div class="rule-accent mt-5 mb-9 w-28"></div>
+
+      <div id="quote-anchor-1" aria-hidden="true" class="h-px w-px"></div>
+
+      <div class="two-col col-dropcap" data-reveal>
+        <p>Chez Bernard, la cuisine commence a table. Le tartare arrive entier, rouge cru, pose face au client&nbsp;: couteau fin, planche de bois, gestes comptes. On le regarde naitre sous la lumiere filtree du ficus, on l'assaisonne d'un trait d'huile du pays, on le complete d'un jaune d'oeuf et de cornichons tailles a la seconde. Ce n'est pas un tour de salle, c'est une ecriture.</p>
+
+        <p>Sebastien tient la pasta. Les raviolis ricotta-epinards sortent du tour chaque matin, finis a l'huile de menthe, bouchees larges comme des monnaies d'argent. Les tagliatelles aux langoustines cuisent en deux minutes, le jus de corail se lie hors du feu, on sert chaud, on mange vite. La pasta au Grand Bleu ne se decore pas, elle se goute.</p>
+
+        <p>Le poisson, lui, vient du port voisin et raconte la journee du marin. Daurade entiere rotie a la peau, loup grille au sel, beignets d'anchois quand la saison tombe juste. La cuisson cherche l'arete, la chair reste nacree, l'assiette ne triche pas. En salle, on prefere annoncer les plats a voix basse plutot que de les inscrire en capitales&nbsp;: la carte suit la mer, la mer decide.</p>
+
+        <p>Au dessert, la maison aime les illusions simples&nbsp;: un citron trompe-l'oeil qui cache une mousse claire, un moelleux chocolat qui coule juste ce qu'il faut, un cafe serre pour refermer la page. Le menu complet a 26 euros reste l'argument le plus franc du quartier, il dit avec douceur que l'ecriture culinaire n'est pas reservee aux grandes tables&nbsp;: elle se lit aussi sous un ficus, a l'heure ou la place se vide et le service commence.</p>
+      </div>
+
+      <div class="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <figure class="frame-ficus" data-reveal>
+          <div class="w-full overflow-hidden" style="aspect-ratio:1/1;">
+            <img src="./assets/images/tripadvisor-grand-bleu.jpg" alt="Une assiette signature, Le Grand Bleu" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <figcaption class="caption px-3 py-2 border-t border-[color:var(--line)]">Assiette signature, service du soir</figcaption>
+        </figure>
+        <figure class="frame-ficus" data-reveal>
+          <div class="w-full overflow-hidden" style="aspect-ratio:1/1;">
+            <img src="./assets/images/thumbnail-grand-bleu.jpg" alt="Ambiance de salle et terrasse, Le Grand Bleu" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <figcaption class="caption px-3 py-2 border-t border-[color:var(--line)]">Ambiance de salle, sous le ficus</figcaption>
+        </figure>
+        <figure class="frame-ficus" data-reveal>
+          <div class="w-full overflow-hidden" style="aspect-ratio:1/1;">
+            <img src="./assets/images/hero-grand-bleu-terrasse.jpg" alt="Terrasse, Place du Canon" loading="lazy" class="w-full h-full object-cover" />
+          </div>
+          <figcaption class="caption px-3 py-2 border-t border-[color:var(--line)]">Terrasse, fin de service</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== ENCADRE-MAISON ================== -->
+<section id="maison" class="dim-when-overlay relative pb-20 sm:pb-24">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="relative bg-paper border border-[color:var(--line)] p-6 sm:p-10" data-reveal>
+      <span class="marginalia">IV.</span>
+      <p class="eyebrow mb-3">Encadre</p>
+      <h2 class="section-title mb-8">
+        <span class="roman">IV.</span>La maison en bref
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-0">
         <div>
-          <p class="eyebrow" data-reveal>Restaurant bistronomique · L'Île-Rousse</p>
-          <h1 class="h1 mt-5" data-reveal>Méditerranée, sous un ficus de 35 ans.</h1>
-          <p class="lede mt-6 max-w-xl" data-reveal>
-            Sur la Place du Canon à L'Île-Rousse, Bernard et Sébastien perpétuent une cuisine bistronomique franco-méditerranéenne. Poissons de pêche locale, pasta maison, tartare découpé au couteau en salle : le tout servi sous un ficus trentenaire qui fait la réputation de la maison.
+          <div class="fact-row"><span class="fact-key">Adresse</span><span class="fact-val">Place du Canon, 20220 L'Ile-Rousse</span></div>
+          <div class="fact-row"><span class="fact-key">Telephone</span><span class="fact-val"><a class="accent-link" href="tel:+33495600037">04&nbsp;95&nbsp;60&nbsp;00&nbsp;37</a></span></div>
+          <div class="fact-row"><span class="fact-key">Service midi</span><span class="fact-val">11h30, 14h00</span></div>
+          <div class="fact-row"><span class="fact-key">Service soir</span><span class="fact-val">18h45, 22h00</span></div>
+          <div class="fact-row"><span class="fact-key">Ouverture</span><span class="fact-val">7 jours sur 7, en saison</span></div>
+        </div>
+        <div>
+          <div class="fact-row"><span class="fact-key">Saison</span><span class="fact-val">15 avril, 15 octobre</span></div>
+          <div class="fact-row"><span class="fact-key">Note Google</span><span class="fact-val"><strong class="text-ink">4.4</strong> sur 5, 1&nbsp;181 avis</span></div>
+          <div class="fact-row"><span class="fact-key">Distinction</span><span class="fact-val">Travelers' Choice TripAdvisor 2025</span></div>
+          <div class="fact-row"><span class="fact-key">Menu complet</span><span class="fact-val">26 euros, entree plat dessert</span></div>
+          <div class="fact-row"><span class="fact-key">Plats</span><span class="fact-val">de 18 a 25 euros</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== DUO PERE-FILS ================== -->
+<section id="duo" class="dim-when-overlay relative pb-20 sm:pb-28">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="relative">
+      <span class="marginalia">V.</span>
+      <p class="eyebrow mb-4" data-reveal>Chapitre deuxieme</p>
+      <h2 class="section-title" data-reveal>
+        <span class="roman">V.</span>Deux signatures, une meme main
+      </h2>
+      <div class="rule-accent mt-5 mb-9 w-28"></div>
+
+      <div id="quote-anchor-2" aria-hidden="true" class="h-px w-px"></div>
+
+      <div class="grid lg:grid-cols-[1.4fr_.85fr] gap-10 items-start">
+        <div class="max-measure-wide">
+          <p class="pull-italic text-[1.35rem] sm:text-[1.55rem] leading-[1.4] mb-6" data-reveal>
+            Bernard a ouvert la porte, Sebastien ecrit la suite. Deux generations, deux ecritures, et la meme maniere de traiter l'assiette comme une page.
           </p>
-          <div class="mt-8 flex flex-wrap items-center gap-5" data-reveal>
-            <a href="tel:+33495600037" class="cta-primary">
-              <span>Réserver une table</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-            </a>
-            <a href="#histoire" class="cta-underline">Découvrir la maison</a>
-          </div>
-          <div class="mt-10 flex items-center gap-6 text-sm text-ink-2" data-reveal>
-            <div class="flex items-center gap-2">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="m12 17.27 5.18 3.14-1.37-5.89L20.5 9.24l-6.05-.52L12 3 9.55 8.72 3.5 9.24l4.69 5.28-1.37 5.89z"/></svg>
-              <span><strong class="text-ink">4,4 / 5</strong> sur 1 181 avis Google</span>
-            </div>
+          <div class="dropcap text-[1.04rem] leading-[1.66]" data-reveal>
+            <p>Bernard est chez lui sur la Place du Canon depuis plus de trente saisons. Il a vu grandir le ficus, installer les tables, passer les etes. Il connait les peches de l'aube, les commandes de Sainte-Agathe, les habitudes de la clientele fidele qui pousse la porte d'abord a midi, puis revient le soir. Il garde la main sur le tartare, parce que le geste ne se delegue pas.</p>
+            <p class="mt-4">Sebastien, lui, est entre en cuisine par la pasta. C'est sa griffe&nbsp;: la semoule petrie a l'eau de source, les raviolis pinces un a un, les sauces courtes montees minute. Il apporte une lecture contemporaine a la carte, sans rompre le fil. Quand le pere ecrit au couteau, le fils ecrit au rouleau, et la maison tient ensemble. On la reconnait a ce double signe, c'est la une cuisine qui n'est jamais une, toujours a deux voix.</p>
           </div>
         </div>
-        <div class="relative" data-reveal>
-          <div class="hero-ratio overflow-hidden rounded-[4px] border border-line bg-line">
-            <img
-              id="hero-image"
-              src="./assets/images/hero-grand-bleu-terrasse.jpg"
-              alt="Le Grand Bleu, terrasse sous le ficus de la Place du Canon"
-              loading="eager"
-              fetchpriority="high"
-              class="w-full h-full object-cover"
-            />
+        <figure class="frame-ficus self-start" data-reveal>
+          <div class="w-full overflow-hidden bg-paper" style="aspect-ratio:2/3;">
+            <img src="https://placehold.co/600x900/F4EEE2/3F5236?text=Portrait+Bernard+%26+Sebastien" alt="Bernard et Sebastien, duo pere-fils, portrait a fournir" loading="lazy" class="w-full h-full object-cover" />
           </div>
-          <div class="absolute left-3 bottom-3 sm:left-5 sm:bottom-5 flex flex-wrap gap-2">
-            <span class="chip">Travelers' Choice 2025</span>
-            <span class="chip">4,4 ★ Google (1 181 avis)</span>
-          </div>
-        </div>
+          <figcaption class="caption px-3 py-2 border-t border-[color:var(--line)]">Bernard et Sebastien, duo pere-fils</figcaption>
+        </figure>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- MARQUEE -->
-    <section id="marquee" class="overflow-hidden bg-ink py-6 sm:py-8" aria-label="Repères de la maison">
-      <div class="marquee-track">
-        <div class="marquee-item">
-          <span>Ficus de 35 ans</span><span class="marquee-dot"></span>
-          <span>Place du Canon</span><span class="marquee-dot"></span>
-          <span>Tartare au couteau</span><span class="marquee-dot"></span>
-          <span>Pasta maison</span><span class="marquee-dot"></span>
-          <span>Poissons de pêche locale</span><span class="marquee-dot"></span>
-          <span>Bernard &amp; Sébastien</span><span class="marquee-dot"></span>
-          <span>Depuis la Balagne</span><span class="marquee-dot"></span>
-          <span>Travelers' Choice 2025</span><span class="marquee-dot"></span>
-        </div>
-        <div class="marquee-item" aria-hidden="true">
-          <span>Ficus de 35 ans</span><span class="marquee-dot"></span>
-          <span>Place du Canon</span><span class="marquee-dot"></span>
-          <span>Tartare au couteau</span><span class="marquee-dot"></span>
-          <span>Pasta maison</span><span class="marquee-dot"></span>
-          <span>Poissons de pêche locale</span><span class="marquee-dot"></span>
-          <span>Bernard &amp; Sébastien</span><span class="marquee-dot"></span>
-          <span>Depuis la Balagne</span><span class="marquee-dot"></span>
-          <span>Travelers' Choice 2025</span><span class="marquee-dot"></span>
-        </div>
+<!-- ================== GALERIE PLANCHE ================== -->
+<section id="galerie" class="dim-when-overlay relative pb-20 sm:pb-28">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="relative">
+      <span class="marginalia">VI.</span>
+      <p class="eyebrow mb-4" data-reveal>Planche, saison 2025</p>
+      <h2 class="section-title" data-reveal>
+        <span class="roman">VI.</span>Planche, saison 2025
+      </h2>
+      <div class="rule-accent mt-5 mb-9 w-28"></div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5" data-reveal>
+        <figure class="plate" style="aspect-ratio:4/5;">
+          <img src="./assets/images/hero-grand-bleu-terrasse.jpg" alt="01 Terrasse sous le ficus" loading="lazy" />
+          <span class="plate-num">01</span>
+          <figcaption class="plate-label">Terrasse</figcaption>
+        </figure>
+        <figure class="plate" style="aspect-ratio:4/5;">
+          <img src="./assets/images/tripadvisor-grand-bleu.jpg" alt="02 Plat signature" loading="lazy" />
+          <span class="plate-num">02</span>
+          <figcaption class="plate-label">Pasta</figcaption>
+        </figure>
+        <figure class="plate" style="aspect-ratio:4/5;">
+          <img src="./assets/images/thumbnail-grand-bleu.jpg" alt="03 Detail de salle" loading="lazy" />
+          <span class="plate-num">03</span>
+          <figcaption class="plate-label">Salle</figcaption>
+        </figure>
+        <figure class="plate" style="aspect-ratio:4/5;">
+          <img src="https://placehold.co/480x600/F4EEE2/3F5236?text=Tartare+au+couteau" alt="04 Tartare au couteau, photo a fournir" loading="lazy" />
+          <span class="plate-num">04</span>
+          <figcaption class="plate-label">Tartare</figcaption>
+        </figure>
+        <figure class="plate" style="aspect-ratio:4/5;">
+          <img src="https://placehold.co/480x600/F4EEE2/3F5236?text=Facade" alt="05 Facade, photo a fournir" loading="lazy" />
+          <span class="plate-num">05</span>
+          <figcaption class="plate-label">Facade</figcaption>
+        </figure>
+        <figure class="plate" style="aspect-ratio:4/5;">
+          <img src="https://placehold.co/480x600/F4EEE2/3F5236?text=Dessert+signature" alt="06 Dessert signature, photo a fournir" loading="lazy" />
+          <span class="plate-num">06</span>
+          <figcaption class="plate-label">Dessert</figcaption>
+        </figure>
       </div>
-    </section>
+      <p class="caption mt-4">Planche editoriale, selection saison 2025, trois cliches a completer par la maison.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- HISTOIRE -->
-    <section id="histoire" class="py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
-        <div>
-          <p class="eyebrow" data-reveal>Notre maison</p>
-          <h2 class="h2 mt-4 rule-top" data-reveal>Père et fils, sous un ficus de 35 ans.</h2>
-          <div class="mt-7 space-y-5 max-w-2xl text-ink" data-reveal>
-            <p>
-              Place du Canon, au coeur de L'Île-Rousse et à deux pas de la plage, Le Grand Bleu déploie sa terrasse dorée en bois sous un ficus trentenaire. Un havre de lumière filtrée, juste ce qu'il faut de fraîcheur, où le temps ralentit entre deux services.
-            </p>
-            <p>
-              Bernard et Sébastien y perpètuent une cuisine franco-méditerranéenne, ancrée dans la saison et les produits locaux. Poissons du jour, pasta pétrie maison, tartare découpé au couteau en salle : une table où la tradition bistrot rencontre la précision bistronomique.
-            </p>
-          </div>
-          <div class="mt-8 flex flex-wrap gap-3 text-sm text-ink-2" data-reveal>
-            <span class="chip">Depuis la Balagne</span>
-            <span class="chip">Pêche locale</span>
-            <span class="chip">Saison 15 avril au 15 octobre</span>
-          </div>
-        </div>
-        <div class="relative" data-reveal>
-          <div class="aspect-[3/4] overflow-hidden rounded-[4px] border border-line bg-line">
-            <img
-              src="./assets/images/tripadvisor-grand-bleu.jpg"
-              alt="Ambiance de la salle et terrasse, duo Bernard et Sébastien"
+<!-- ================== CARNET PRATIQUE ================== -->
+<section id="infos" class="dim-when-overlay relative pb-24">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="relative">
+      <span class="marginalia">VII.</span>
+      <p class="eyebrow mb-4" data-reveal>Carnet pratique</p>
+      <h2 class="section-title" data-reveal>
+        <span class="roman">VII.</span>Nous trouver, nous appeler
+      </h2>
+      <div class="rule-accent mt-5 mb-10 w-28"></div>
+
+      <div class="grid lg:grid-cols-3 gap-8 lg:gap-10">
+
+        <div data-reveal>
+          <p class="eyebrow mb-3">Adresse</p>
+          <p class="font-display text-[1.2rem]" style="font-weight:500;">
+            Le Grand Bleu<br/>Place du Canon, 20220 L'Ile-Rousse<br/>Haute-Corse
+          </p>
+          <div class="frame-ficus mt-5 overflow-hidden" style="aspect-ratio:1/1;">
+            <iframe
+              src="https://maps.google.com/maps?q=42.6357258,8.9378093&z=15&output=embed"
+              title="Plan d'acces au Grand Bleu, Place du Canon, L'Ile-Rousse"
               loading="lazy"
-              class="w-full h-full object-cover"
-            />
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full border-0"></iframe>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- SIGNATURE -->
-    <section id="signature" class="py-20 sm:py-28 bg-[#FBF7EE]">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="max-w-2xl">
-          <p class="eyebrow" data-reveal>La signature</p>
-          <h2 class="h2 mt-4 rule-top" data-reveal>Trois plats qui disent la maison.</h2>
-          <p class="lede mt-5" data-reveal>
-            Une cuisine du geste, préparée à la minute, portée par des produits choisis. Quelques assiettes signalent l'esprit du Grand Bleu mieux que tous les discours.
+        <div data-reveal>
+          <p class="eyebrow mb-3">Horaires</p>
+          <ul class="border-y border-[rgba(63,82,54,.3)] divide-y divide-[rgba(63,82,54,.3)]">
+            <li class="flex justify-between py-3">
+              <span class="font-display italic text-ink">Tous les jours, midi</span>
+              <span class="font-body text-[.95rem] text-ink2">11h30, 14h00</span>
+            </li>
+            <li class="flex justify-between py-3">
+              <span class="font-display italic text-ink">Tous les jours, soir</span>
+              <span class="font-body text-[.95rem] text-ink2">18h45, 22h00</span>
+            </li>
+          </ul>
+          <p class="caption mt-4">Sept jours sur sept, en saison.</p>
+          <p class="caption mt-1">Hors saison, nous consulter.</p>
+          <p class="eyebrow mt-8 mb-2">Distinction</p>
+          <p class="font-display text-[1rem]" style="font-weight:500;">Travelers' Choice TripAdvisor, 2025</p>
+          <p class="caption">Note Google <strong class="text-ink">4.4</strong> sur 5, 1&nbsp;181 avis.</p>
+        </div>
+
+        <div data-reveal>
+          <p class="eyebrow mb-3">Reserver</p>
+          <p class="mb-2 ours">Reservation par telephone uniquement</p>
+          <a href="tel:+33495600037" class="phone-xl block mt-2">04 95 60 00 37</a>
+          <p class="caption mt-4">Pour les tables de 6 et plus, merci d'appeler avant 11h du matin.</p>
+          <p class="eyebrow mt-8 mb-2">Suivre la maison</p>
+          <p class="font-body text-[.95rem]">
+            <a class="accent-link" href="https://www.facebook.com/lgb20220" target="_blank" rel="noopener noreferrer">Facebook, lgb20220</a><br/>
+            <a class="accent-link" href="https://www.instagram.com/legrandbleu.restaurant/" target="_blank" rel="noopener noreferrer">Instagram, legrandbleu.restaurant</a>
           </p>
         </div>
-
-        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          <article class="sig-card" data-reveal>
-            <div class="aspect-square overflow-hidden rounded-[6px] bg-line mb-5">
-              <img src="./assets/images/thumbnail-grand-bleu.jpg" alt="Tartare découpé au couteau, préparé en salle" loading="lazy" class="w-full h-full object-cover"/>
-            </div>
-            <div class="rule"></div>
-            <h3 class="h3">Tartare au couteau</h3>
-            <p class="mt-2 text-ink-2">Découpé en salle devant vous, assaisonné minute. Un geste de bistrot, un moment de spectacle.</p>
-          </article>
-
-          <article class="sig-card" data-reveal>
-            <div class="aspect-square overflow-hidden rounded-[6px] bg-line mb-5">
-              <img src="https://placehold.co/800x800/D9CDB6/0E2A3B?text=Raviolis+ricotta-epinards" alt="Raviolis ricotta-épinards, huile de menthe" loading="lazy" class="w-full h-full object-cover"/>
-            </div>
-            <div class="rule"></div>
-            <h3 class="h3">Raviolis ricotta-épinards</h3>
-            <p class="mt-2 text-ink-2">Pâte pétrie maison, finis à l'huile de menthe. La fraîcheur d'un jardin méditerranéen.</p>
-          </article>
-
-          <article class="sig-card" data-reveal>
-            <div class="aspect-square overflow-hidden rounded-[6px] bg-line mb-5">
-              <img src="https://placehold.co/800x800/D9CDB6/0E2A3B?text=Pasta+aux+langoustines" alt="Pasta aux langoustines, poissons de pêche locale" loading="lazy" class="w-full h-full object-cover"/>
-            </div>
-            <div class="rule"></div>
-            <h3 class="h3">Pasta aux langoustines</h3>
-            <p class="mt-2 text-ink-2">Langoustines justes saisies, pasta maison al dente, jus iodé. L'assiette qui résume la Grande Bleue.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALERIE -->
-    <section id="galerie" class="py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="flex items-end justify-between flex-wrap gap-6">
-          <div class="max-w-xl">
-            <p class="eyebrow" data-reveal>En images</p>
-            <h2 class="h2 mt-4 rule-top" data-reveal>La lumière de la terrasse.</h2>
-          </div>
-          <p class="lede max-w-md" data-reveal>
-            Quelques fragments de la maison : le ficus, la salle, la Place du Canon, et la table.
-          </p>
-        </div>
-
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <figure class="aspect-[4/3] sm:col-span-2 overflow-hidden rounded-[4px] bg-line" data-reveal>
-            <img src="./assets/images/hero-grand-bleu-terrasse.jpg" alt="Vue large de la terrasse sous le ficus" loading="lazy" class="g-img"/>
-          </figure>
-          <figure class="aspect-[3/4] overflow-hidden rounded-[4px] bg-line" data-reveal>
-            <img src="./assets/images/tripadvisor-grand-bleu.jpg" alt="Détail de la salle bistronomique" loading="lazy" class="g-img"/>
-          </figure>
-          <figure class="aspect-square overflow-hidden rounded-[4px] bg-line" data-reveal>
-            <img src="./assets/images/thumbnail-grand-bleu.jpg" alt="Zoom sur l'ambiance terrasse" loading="lazy" class="g-img"/>
-          </figure>
-          <figure class="aspect-square overflow-hidden rounded-[4px] bg-line" data-reveal>
-            <img src="https://placehold.co/900x900/0E2A3B/F7F1E6?text=Vue+mer+Ile-Rousse" alt="L'Île-Rousse vue depuis la Place du Canon" loading="lazy" class="g-img"/>
-          </figure>
-          <figure class="aspect-[3/4] overflow-hidden rounded-[4px] bg-line" data-reveal>
-            <img src="https://placehold.co/900x1200/C5633E/F7F1E6?text=Dessert+signature" alt="Citron trompe-l'oeil, dessert signature" loading="lazy" class="g-img"/>
-          </figure>
-          <figure class="aspect-[4/3] sm:col-span-2 overflow-hidden rounded-[4px] bg-line" data-reveal>
-            <img src="https://placehold.co/1400x900/D9CDB6/0E2A3B?text=Place+du+Canon" alt="Place du Canon, coeur de L'Île-Rousse" loading="lazy" class="g-img"/>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROOF -->
-    <section id="proof" class="py-20 sm:py-28 bg-[#FBF7EE]">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
-          <div class="text-center lg:text-left" data-reveal>
-            <p class="eyebrow">Ce qu'on en dit</p>
-            <div class="mt-4 font-display font-bold leading-none text-accent" style="font-size: clamp(4.5rem, 14vw, 9rem); font-variation-settings: 'opsz' 144; letter-spacing:-0.03em;">
-              4,4<span class="text-ink" style="font-size:0.5em; font-weight:500;"> / 5</span>
-            </div>
-            <p class="mt-4 text-ink-2">
-              sur <strong class="text-ink">1 181 avis</strong> Google. <br class="hidden sm:block"/>
-              #11 sur 65 à L'Île-Rousse (TripAdvisor).
-            </p>
-            <div class="mt-6 inline-flex items-center gap-2 chip" style="background:var(--ink); color:var(--bg); border-color:var(--ink);">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="m12 17.27 5.18 3.14-1.37-5.89L20.5 9.24l-6.05-.52L12 3 9.55 8.72 3.5 9.24l4.69 5.28-1.37 5.89z"/></svg>
-              <span>Travelers' Choice 2025</span>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-5">
-            <blockquote class="border-l-2 border-accent pl-5 py-2" data-reveal>
-              <p class="font-display italic text-lg leading-snug">« Cuisine maison, savoureuse et généreuse. »</p>
-              <footer class="mt-3 text-sm text-ink-2">Avis Google, 5 étoiles</footer>
-            </blockquote>
-            <blockquote class="border-l-2 border-accent pl-5 py-2" data-reveal>
-              <p class="font-display italic text-lg leading-snug">« Une terrasse dorée sous un ficus trentenaire. Cadre unique et reposant. »</p>
-              <footer class="mt-3 text-sm text-ink-2">Avis TripAdvisor, 5 étoiles</footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INFOS -->
-    <section id="infos" class="py-20 sm:py-28">
-      <div class="max-w-7xl mx-auto px-5 sm:px-8">
-        <div class="max-w-2xl">
-          <p class="eyebrow" data-reveal>Nous trouver</p>
-          <h2 class="h2 mt-4 rule-top" data-reveal>Nous trouver et réserver.</h2>
-          <p class="lede mt-5" data-reveal>
-            La réservation se prend par téléphone. N'hésitez pas à appeler le midi ou en début d'après-midi.
-          </p>
-        </div>
-
-        <div class="mt-12 grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-          <div class="space-y-8" data-reveal>
-            <div>
-              <h3 class="h3">Adresse</h3>
-              <p class="mt-3">
-                Place du Canon, 12 Rue Napoléon<br/>
-                20220 L'Île-Rousse, Haute-Corse
-              </p>
-            </div>
-
-            <div>
-              <h3 class="h3">Téléphone</h3>
-              <p class="mt-3">
-                <a href="tel:+33495600037" class="cta-underline">04 95 60 00 37</a>
-              </p>
-            </div>
-
-            <div>
-              <h3 class="h3">Horaires</h3>
-              <table class="hrs mt-4">
-                <tbody>
-                  <tr><td>Midi</td><td>11h30 à 14h00</td></tr>
-                  <tr><td>Soir</td><td>18h45 à 22h00</td></tr>
-                  <tr><td>Ouverture</td><td>Tous les jours</td></tr>
-                  <tr><td>Saison</td><td>15 avril au 15 octobre</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div>
-              <h3 class="h3">Suivez la maison</h3>
-              <div class="mt-3 flex flex-wrap gap-3">
-                <a class="cta-ghost text-sm" href="https://www.facebook.com/lgb20220" rel="noopener" target="_blank">Facebook</a>
-                <a class="cta-ghost text-sm" href="https://www.instagram.com/legrandbleu.restaurant" rel="noopener" target="_blank">Instagram</a>
-              </div>
-            </div>
-
-            <div class="pt-4">
-              <a href="tel:+33495600037" class="cta-primary">
-                <span>Réserver une table</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <div data-reveal>
-            <div class="overflow-hidden rounded-[12px] border border-line">
-              <iframe
-                src="https://maps.google.com/maps?q=42.6357258,8.9378093&z=15&output=embed"
-                title="Carte Le Grand Bleu, Place du Canon, L'Île-Rousse"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-                style="border:0; width:100%; height:420px; display:block;"
-                class="lg:!h-[520px]"
-              ></iframe>
-            </div>
-            <p class="mt-4 text-sm text-ink-2">Place du Canon, entre la gare et la plage. Parking du Canon à proximité.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-ink text-bg pt-20 sm:pt-28 pb-8 mt-8">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8">
-      <div class="grid sm:grid-cols-2 gap-6 items-end pb-10 border-b border-white/10">
-        <div class="text-bg">
-          <p class="eyebrow" style="color: var(--accent);">Le Grand Bleu</p>
-          <p class="mt-3 max-w-md opacity-90">
-            Place du Canon, 12 Rue Napoléon, 20220 L'Île-Rousse<br/>
-            04 95 60 00 37 · Tous les jours : 11h30 à 14h00, 18h45 à 22h00
-          </p>
-        </div>
-        <div class="flex sm:justify-end gap-3 flex-wrap">
-          <a href="tel:+33495600037" class="cta-primary">Appeler</a>
-          <a href="#infos" class="cta-ghost" style="border-color: var(--bg); color: var(--bg);">Itinéraire</a>
-        </div>
-      </div>
-
-      <div class="pt-10">
-        <div class="brand-xxl" aria-hidden="true">Le Grand Bleu</div>
-      </div>
-
-      <div class="mt-10 flex flex-wrap items-center justify-between gap-4 text-xs opacity-80">
-        <p>Site réalisé avec soin par Menghi Computer Science. 2026.</p>
-        <p>L'Île-Rousse, Balagne, Haute-Corse.</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script type="module">
-    import { animate, inView, scroll } from 'https://cdn.jsdelivr.net/npm/motion@10.18.0/+esm';
-    import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/+esm';
+<!-- ================== COLOPHON ================== -->
+<footer id="colophon" class="relative pt-12 pb-16 border-t border-[color:var(--line)]">
+  <div class="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-14">
+    <div class="rule-ficus" data-rule></div>
+    <div class="mt-10 grid md:grid-cols-[1.3fr_.7fr_.7fr] gap-8 items-start">
+      <div>
+        <p class="eyebrow mb-2">Colophon</p>
+        <p class="font-display" style="font-weight:700;font-size:clamp(2rem,4vw,2.8rem);line-height:1.02;letter-spacing:-0.02em;">
+          Le Grand Bleu,<br/>Place du Canon.
+        </p>
+        <p class="caption mt-3 max-w-[46ch]">
+          Cette page est pensee comme un numero unique, compose a L'Ile-Rousse en avril 2026. Fonte de titre, Fraunces. Fonte de texte, Inter. Papier virtuel, lin chaud. Encre, encre. Filets, vert ficus. Surlignages, terracotta tartare.
+        </p>
+      </div>
+      <div>
+        <p class="eyebrow mb-2">Coordonnees</p>
+        <p class="font-body text-[.92rem] text-ink">Place du Canon,<br/>20220 L'Ile-Rousse, Haute-Corse</p>
+        <p class="font-body text-[.92rem] mt-2"><a class="accent-link" href="tel:+33495600037">04&nbsp;95&nbsp;60&nbsp;00&nbsp;37</a></p>
+      </div>
+      <div>
+        <p class="eyebrow mb-2">Ours</p>
+        <p class="sc font-body text-[.82rem] text-ink2">Edite par Menghi Computer Science, 2026.</p>
+        <p class="sc font-body text-[.82rem] text-ink2 mt-1">Site realise avec soin, sans tracker publicitaire.</p>
+        <p class="sc font-body text-[.82rem] text-ink2 mt-1"><a class="accent-link" href="#cover">Retour a la couverture</a></p>
+      </div>
+    </div>
+    <div class="mt-10 rule-ficus" data-rule></div>
+    <p class="ours mt-4 text-center">Fin du numero 01. Merci de votre lecture.</p>
+  </div>
+</footer>
 
-    // Smooth scroll
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
-      const lenis = new Lenis({ lerp: 0.1, duration: 1.2 });
-      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
-      requestAnimationFrame(raf);
+<!-- ================== ANCRE-CITATION OVERLAYS ================== -->
+<aside id="ancre-1" class="ancre-citation" aria-hidden="true">
+  <div class="card">
+    <p class="quote"><q>Le tartare decoupe au couteau devant nous, un vrai spectacle et un plat savoureux.</q></p>
+    <p class="attrib">Avis Google, 5 etoiles, 2024</p>
+  </div>
+</aside>
+<aside id="ancre-2" class="ancre-citation" aria-hidden="true">
+  <div class="card">
+    <p class="quote"><q>Cuisine maison, genereuse, raffinee, on repart rassasies et heureux.</q></p>
+    <p class="attrib">TripAdvisor, 5 etoiles, 2024</p>
+  </div>
+</aside>
+
+<!-- ================== MOTION / LENIS ================== -->
+<script type="module">
+  import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/+esm';
+  import { animate, inView, scroll } from 'https://cdn.jsdelivr.net/npm/motion@10.18.0/+esm';
+
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced){
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+    });
+    function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+
+  inView('[data-reveal]', (el) => {
+    el.target.classList.add('is-in');
+  }, { margin: '0px 0px -10% 0px' });
+
+  inView('[data-rule]', (el) => {
+    el.target.classList.add('is-in');
+  }, { margin: '0px 0px -5% 0px' });
+
+  const op = document.getElementById('ouverture-image');
+  if (op && !reduced){
+    scroll(
+      animate(op, { transform: ['translateY(-3%)','translateY(3%)'] }, { easing: 'linear' }),
+      { target: op.closest('figure'), offset: ['start end','end start'] }
+    );
+  }
+
+  const overlays = {
+    1: document.getElementById('ancre-1'),
+    2: document.getElementById('ancre-2'),
+  };
+  let activeKey = null;
+  let hideTimer = null;
+
+  function showQuote(key){
+    if (reduced) return;
+    if (activeKey === key) return;
+    if (activeKey){ hideQuote(activeKey, true); }
+    const el = overlays[key]; if (!el) return;
+    const card = el.querySelector('.card');
+    activeKey = key;
+    document.body.classList.add('overlay-active');
+    el.style.pointerEvents = 'auto';
+    el.setAttribute('aria-hidden','false');
+    animate(el, { opacity: [0, 1] }, { duration: .55, easing: [0.16,1,0.3,1] });
+    animate(card, { transform: ['translateX(40%)','translateX(0%)'] }, { duration: .9, easing: [0.16,1,0.3,1] });
+
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => hideQuote(key), 2600);
+  }
+  function hideQuote(key, immediate=false){
+    const el = overlays[key]; if (!el) return;
+    const card = el.querySelector('.card');
+    const d = immediate ? 0 : .7;
+    animate(el, { opacity: [1, 0] }, { duration: d, easing: [0.4,0,0.6,1] }).finished.then(() => {
+      el.style.pointerEvents = 'none';
+      el.setAttribute('aria-hidden','true');
+    });
+    animate(card, { transform: ['translateX(0%)','translateX(-8%)'] }, { duration: d, easing: [0.4,0,0.6,1] });
+    if (activeKey === key){
+      activeKey = null;
+      document.body.classList.remove('overlay-active');
     }
+  }
 
-    // Reveal on scroll
-    inView('[data-reveal]', (info) => {
-      animate(info.target,
-        { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0)'] },
-        { duration: 0.75, easing: [0.2, 0.7, 0.2, 1] }
-      );
-    }, { amount: 0.2 });
+  const trig1 = document.getElementById('quote-anchor-1');
+  const trig2 = document.getElementById('quote-anchor-2');
+  if (trig1 && !reduced){
+    inView(trig1, () => { showQuote(1); }, { margin: '-40% 0px -40% 0px' });
+  }
+  if (trig2 && !reduced){
+    inView(trig2, () => { showQuote(2); }, { margin: '-40% 0px -40% 0px' });
+  }
 
-    // Hero parallax
-    const hero = document.querySelector('#hero-image');
-    const heroSection = document.querySelector('#hero');
-    if (hero && heroSection && !prefersReduced) {
-      scroll(
-        animate(hero, { transform: ['translateY(0%)', 'translateY(-8%)'] }),
-        { target: heroSection, offset: ['start end', 'end start'] }
-      );
-    }
+  document.addEventListener('click', () => { if (activeKey) hideQuote(activeKey); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && activeKey) hideQuote(activeKey); });
+</script>
 
-    // Nav shadow on scroll
-    const nav = document.getElementById('nav');
-    const onScroll = () => {
-      if (window.scrollY > 24) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  </script>
 </body>
 </html>
